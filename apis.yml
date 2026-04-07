@@ -7,8 +7,7 @@ apis:
 
       natural-resources-conservation-service:natural-resources-conservation-service
     name: Natural Resources Conservation Service
-    tags:
-      - API
+    tags: []
     humanURL: https://www.nrcs.usda.gov
     properties:
       - url: https://www.nrcs.usda.gov
