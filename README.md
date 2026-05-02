@@ -1,48 +1,49 @@
 # Natural Resources Conservation Service (natural-resources-conservation-service)
-The Natural Resources Conservation Service (NRCS) is a federal agency under the United States Department of Agriculture that works to help farmers, ranchers, and landowners conserve and protect natural resources. They provide technical assistance, financial assistance, and conservation planning to help individuals and communities implement conservation practices that improve soil health, water quality, and wildlife habitat. The NRCS also works to assist in reducing erosion, conserving water, and improving overall land management practices. Through partnerships and collaboration with various stakeholders, the NRCS aims to promote sustainable agriculture and land stewardship practices that benefit both the environment and agriculture industry.
+The Natural Resources Conservation Service (NRCS) is a federal agency under the United States Department of Agriculture that works to help farmers, ranchers, and landowners conserve and protect natural resources. They provide technical assistance, financial assistance, and conservation planning to help individuals and communities implement conservation practices that improve soil health, water quality, and wildlife habitat.
 
-**URL:** [Visit APIs.json URL](
-https://raw.githubusercontent.com/api-evangelist/natural-resources-conservation-service/refs/heads/main/apis.yml)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/natural-resources-conservation-service/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
 ## Tags:
 
- - Federal Government
+ - Federal Government, Agriculture, Conservation, Soil, Natural Resources
 
 ## Timestamps
 
-- **Created:** 2024-12-03 
-- **Modified:** 2025-01-02 
+- **Created:** 2024-12-03
+- **Modified:** 2026-05-02
 
 ## APIs
 
-### Natural Resources Conservation Service
+### NRCS Soil Data Access
+Soil Data Access (SDA) is a USDA-NRCS web service that supports ad hoc query and real-time delivery of official soil survey data (SSURGO and STATSGO2) for any user-defined geographic area. The service exposes tabular query and spatial query endpoints that accept SQL-like requests and return JSON or XML responses.
 
-The Regional Conservation Partnership Program (RCPP) is a partner-driven
-approach to conservation that funds solutions to natural resource
-challenges on agricultural land. Resources The technical resources and
-references NRCS provides uses science-based technology to aid conservation
-planning and benefit soil, water, air, plants, and animals ...
+**Human URL:** [https://sdmdataaccess.nrcs.usda.gov](https://sdmdataaccess.nrcs.usda.gov)
 
-**Human URL:** [https://www.nrcs.usda.gov](https://www.nrcs.usda.gov)
-
+**Base URL:** https://sdmdataaccess.nrcs.usda.gov
 
 #### Tags:
 
- - API
+ - Soil, Data, SSURGO, STATSGO2
 
 #### Properties
 
-- [Documentation](https://www.nrcs.usda.gov)
+- [Documentation](https://sdmdataaccess.nrcs.usda.gov)
+- [Reference](https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx)
+
+## Common Properties
+
+- [Website](https://www.nrcs.usda.gov)
+- [Documentation](https://www.nrcs.usda.gov/resources/data-and-reports)
+- [Data](https://sdmdataaccess.nrcs.usda.gov)
 
 ## Maintainers
 
 **FN:** Kin Lane
 
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com
