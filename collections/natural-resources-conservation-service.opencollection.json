@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USDA NRCS Soil Data Access",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Query",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run a Soil Data Access query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Tabular/post.rest",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "query",
+                  "value": ""
+                },
+                {
+                  "name": "format",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Submit a SQL query against the Soil Data Mart database and receive results in the requested format. The request is form-encoded with a SQL query and a desired output format."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SOAP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SOAP tabular service",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Tabular/SDMTabularService.asmx"
+          },
+          "docs": "SOAP 1.1/1.2 endpoint exposing the RunQuery operation against the Soil Data Mart database. Requests must use a SOAP envelope."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Spatial",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "WFS endpoint (WGS84)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDMWGS84Geographic.wfs",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84 (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and GetFeature operations via standard OGC query parameters."
+        },
+        {
+          "info": {
+            "name": "WMS endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDM.wms",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and GetStyles operations via standard OGC query parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

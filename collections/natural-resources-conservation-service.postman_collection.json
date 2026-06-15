@@ -1,0 +1,538 @@
+{
+  "item": [
+    {
+      "id": "38e04b36-d6ad-4017-8899-9811321cad43",
+      "name": "Query",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1d338f90-c298-4959-aa9f-626921e188ae",
+          "name": "Run a Soil Data Access query",
+          "request": {
+            "name": "Run a Soil Data Access query",
+            "description": {
+              "content": "Submit a SQL query against the Soil Data Mart database and receive results in the requested format. The request is form-encoded with a SQL query and a desired output format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Tabular",
+                "post.rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) SQL query to execute against the SDA database."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "Output format for the response."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "65692b4d-e3a1-4a10-a76f-26ff927b493a",
+              "name": "Query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "post.rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) SQL query to execute against the SDA database.",
+                        "type": "text/plain"
+                      },
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Output format for the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d52f86ef-ab50-4849-9faf-d075eaacdebc",
+              "name": "Invalid request or SQL error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "post.rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) SQL query to execute against the SDA database.",
+                        "type": "text/plain"
+                      },
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Output format for the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "435d8003-2e91-47f1-9926-2066a5bb25e6",
+      "name": "SOAP",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6f7b563c-d887-4c2f-a91c-71c9a999cbd1",
+          "name": "SOAP tabular service",
+          "request": {
+            "name": "SOAP tabular service",
+            "description": {
+              "content": "SOAP 1.1/1.2 endpoint exposing the RunQuery operation against the Soil Data Mart database. Requests must use a SOAP envelope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Tabular",
+                "SDMTabularService.asmx"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1bc0ebd8-7ce0-46ab-8291-d84e3a6cd175",
+              "name": "SOAP envelope with query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "SDMTabularService.asmx"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f55ef787-9274-446e-94c5-65acee7bce7e",
+      "name": "Spatial",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7230de3f-d130-441b-a62b-9346b080b540",
+          "name": "WFS endpoint (WGS84)",
+          "request": {
+            "name": "WFS endpoint (WGS84)",
+            "description": {
+              "content": "OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84 (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and GetFeature operations via standard OGC query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Spatial",
+                "SDMWGS84Geographic.wfs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "request",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "1.1.0"
+                },
+                {
+                  "disabled": false,
+                  "key": "typeName",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53193a2a-a8c5-4e29-b4a3-7e51c0ff7b2f",
+              "name": "OGC response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Spatial",
+                    "SDMWGS84Geographic.wfs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "request",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "1.1.0"
+                    },
+                    {
+                      "key": "typeName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "845e5755-d133-42f7-9261-e218f77a7f55",
+          "name": "WMS endpoint",
+          "request": {
+            "name": "WMS endpoint",
+            "description": {
+              "content": "OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and GetStyles operations via standard OGC query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Spatial",
+                "SDM.wms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "request",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "1.1.1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bafada34-11af-43ed-922b-c1fbcc985b06",
+              "name": "OGC response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Spatial",
+                    "SDM.wms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "request",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "1.1.1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://SDMDataAccess.sc.egov.usda.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cf58406d-916a-4219-9036-15f3a2eb406c",
+    "name": "USDA NRCS Soil Data Access",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}
