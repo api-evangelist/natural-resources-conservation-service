@@ -41,6 +41,8 @@ apis:
       - url: https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx
         type: Reference
 common:
+  - type: DomainSecurity
+    url: security/natural-resources-conservation-service-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/USDA-NRCS
   - type: LinkedIn
