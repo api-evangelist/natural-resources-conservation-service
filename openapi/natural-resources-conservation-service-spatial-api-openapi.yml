@@ -1,0 +1,109 @@
+openapi: 3.1.0
+info:
+  title: USDA NRCS Soil Data Access Query Spatial API
+  description: OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.
+  version: 1.0.0
+  contact:
+    name: API Evangelist
+    email: kin@apievangelist.com
+servers:
+- url: https://SDMDataAccess.sc.egov.usda.gov
+  description: USDA NRCS Soil Data Access
+tags:
+- name: Spatial
+paths:
+  /Spatial/SDMWGS84Geographic.wfs:
+    get:
+      summary: WFS endpoint (WGS84)
+      description: OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84 (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and GetFeature operations via standard OGC query parameters.
+      operationId: wfsWgs84
+      tags:
+      - Spatial
+      parameters:
+      - name: service
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - WFS
+      - name: request
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - GetCapabilities
+          - DescribeFeatureType
+          - GetFeature
+      - name: version
+        in: query
+        required: false
+        schema:
+          type: string
+          default: 1.1.0
+      - name: typeName
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OGC response.
+          content:
+            application/xml:
+              schema:
+                type: string
+  /Spatial/SDM.wms:
+    get:
+      summary: WMS endpoint
+      description: OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and GetStyles operations via standard OGC query parameters.
+      operationId: wmsSoils
+      tags:
+      - Spatial
+      parameters:
+      - name: service
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - WMS
+      - name: request
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - GetCapabilities
+          - GetMap
+          - GetFeatureInfo
+          - DescribeLayer
+          - GetStyles
+      - name: version
+        in: query
+        required: false
+        schema:
+          type: string
+          default: 1.1.1
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - image/jpeg
+          - image/png
+          - image/gif
+          - image/svg+xml
+      responses:
+        '200':
+          description: OGC response.
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            application/xml:
+              schema:
+                type: string
