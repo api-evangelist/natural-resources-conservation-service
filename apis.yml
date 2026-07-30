@@ -8,7 +8,19 @@ description: >-
   planning to help individuals and communities implement conservation
   practices that improve soil health, water quality, and wildlife habitat.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/natural-resources-conservation-service.png
 tags:
   - Federal Government
   - Agriculture
@@ -20,26 +32,57 @@ created: '2024-12-03'
 modified: '2026-05-02'
 specificationVersion: '0.19'
 apis:
-  - aid: natural-resources-conservation-service:soil-data-access-api
-    name: NRCS Soil Data Access
-    description: >-
-      Soil Data Access (SDA) is a USDA-NRCS web service that supports ad hoc
-      query and real-time delivery of official soil survey data (SSURGO and
-      STATSGO2) for any user-defined geographic area. The service exposes
-      tabular query and spatial query endpoints that accept SQL-like requests
-      and return JSON or XML responses.
-    humanURL: https://sdmdataaccess.nrcs.usda.gov
-    baseURL: https://sdmdataaccess.nrcs.usda.gov
-    tags:
-      - Soil
-      - Data
-      - SSURGO
-      - STATSGO2
-    properties:
-      - url: https://sdmdataaccess.nrcs.usda.gov
-        type: Documentation
-      - url: https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx
-        type: Reference
+- aid: natural-resources-conservation-service:soil-data-access-api
+  name: NRCS Soil Data Access
+  description: >-
+    Soil Data Access (SDA) is a USDA-NRCS web service that supports ad hoc query and real-time delivery
+    of official soil survey data (SSURGO and STATSGO2) for any user-defined geographic area. The service
+    exposes tabular query and spatial query endpoints that accept SQL-like requests and return JSON or
+    XML responses.
+  humanURL: https://sdmdataaccess.nrcs.usda.gov
+  baseURL: https://sdmdataaccess.nrcs.usda.gov
+  tags:
+  - Soil
+  - Data
+  - SSURGO
+  - STATSGO2
+  properties:
+  - url: https://sdmdataaccess.nrcs.usda.gov
+    type: Documentation
+  - url: https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx
+    type: Reference
+- aid: natural-resources-conservation-service:natural-resources-conservation-service-query-api
+  name: Natural Resources Conservation Service Query API
+  description: The Query API from Natural Resources Conservation Service — 1 operation(s) for query.
+  humanURL: https://sdmdataaccess.nrcs.usda.gov
+  baseURL: https://sdmdataaccess.nrcs.usda.gov
+  tags:
+  - Query
+  properties:
+  - type: OpenAPI
+    url: openapi/natural-resources-conservation-service-query-api-openapi.yml
+- aid: natural-resources-conservation-service:natural-resources-conservation-service-soap-api
+  name: Natural Resources Conservation Service SOAP API
+  description: The SOAP API from Natural Resources Conservation Service — 1 operation(s) for soap.
+  humanURL: https://sdmdataaccess.nrcs.usda.gov
+  baseURL: https://sdmdataaccess.nrcs.usda.gov
+  tags:
+  - SOAP
+  properties:
+  - type: OpenAPI
+    url: openapi/natural-resources-conservation-service-soap-api-openapi.yml
+- aid: >-
+    natural-resources-conservation-service:natural-resources-conservation-service-spatial-api
+  name: Natural Resources Conservation Service Spatial API
+  description: >-
+    The Spatial API from Natural Resources Conservation Service — 2 operation(s) for spatial.
+  humanURL: https://sdmdataaccess.nrcs.usda.gov
+  baseURL: https://sdmdataaccess.nrcs.usda.gov
+  tags:
+  - Spatial
+  properties:
+  - type: OpenAPI
+    url: openapi/natural-resources-conservation-service-spatial-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/natural-resources-conservation-service-agentic-access.yml
