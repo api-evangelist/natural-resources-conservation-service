@@ -1,0 +1,18 @@
+{
+  "provider": "natural-resources-conservation-service",
+  "sources": [
+    "natural-resources-conservation-service-query-api-openapi.yml",
+    "natural-resources-conservation-service-soap-api-openapi.yml",
+    "natural-resources-conservation-service-spatial-api-openapi.yml"
+  ],
+  "outputs": [
+    "natural-resources-conservation-service-query-api-openapi.yml",
+    "natural-resources-conservation-service-soap-api-openapi.yml",
+    "natural-resources-conservation-service-spatial-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

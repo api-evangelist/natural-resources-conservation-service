@@ -1,0 +1,189 @@
+openapi: 3.1.0
+info:
+  title: USDA NRCS Soil Data Access
+  description: >-
+    OpenAPI description of the USDA Natural Resources Conservation Service
+    Soil Data Access (SDA) web services. SDA exposes a public REST POST
+    endpoint that accepts SQL queries against the Soil Data Mart database
+    and returns tabular data in XML, JSON or plain text. SDA additionally
+    provides SOAP, WFS and WMS endpoints which are referenced here but not
+    fully modeled in this specification. The REST endpoint is open and
+    does not require authentication.
+  version: "1.0.0"
+  contact:
+    name: API Evangelist
+    email: kin@apievangelist.com
+servers:
+  - url: https://SDMDataAccess.sc.egov.usda.gov
+    description: USDA NRCS Soil Data Access
+paths:
+  /Tabular/post.rest:
+    post:
+      summary: Run a Soil Data Access query
+      description: >-
+        Submit a SQL query against the Soil Data Mart database and receive
+        results in the requested format. The request is form-encoded with
+        a SQL query and a desired output format.
+      operationId: runQuery
+      tags:
+        - Query
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: SQL query to execute against the SDA database.
+                format:
+                  type: string
+                  description: Output format for the response.
+                  enum:
+                    - xml
+                    - json
+                    - json+columnname
+                    - json+columnname+metadata
+                    - plain
+      responses:
+        '200':
+          description: Query results.
+          content:
+            application/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Invalid request or SQL error.
+  /Tabular/SDMTabularService.asmx:
+    post:
+      summary: SOAP tabular service
+      description: >-
+        SOAP 1.1/1.2 endpoint exposing the RunQuery operation against the
+        Soil Data Mart database. Requests must use a SOAP envelope.
+      operationId: runQuerySoap
+      tags:
+        - SOAP
+      requestBody:
+        required: true
+        content:
+          text/xml:
+            schema:
+              type: string
+              description: SOAP envelope containing a RunQuery request.
+      responses:
+        '200':
+          description: SOAP envelope with query results.
+          content:
+            text/xml:
+              schema:
+                type: string
+  /Spatial/SDMWGS84Geographic.wfs:
+    get:
+      summary: WFS endpoint (WGS84)
+      description: >-
+        OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84
+        (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and
+        GetFeature operations via standard OGC query parameters.
+      operationId: wfsWgs84
+      tags:
+        - Spatial
+      parameters:
+        - name: service
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [WFS]
+        - name: request
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - GetCapabilities
+              - DescribeFeatureType
+              - GetFeature
+        - name: version
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "1.1.0"
+        - name: typeName
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OGC response.
+          content:
+            application/xml:
+              schema:
+                type: string
+  /Spatial/SDM.wms:
+    get:
+      summary: WMS endpoint
+      description: >-
+        OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports
+        GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and
+        GetStyles operations via standard OGC query parameters.
+      operationId: wmsSoils
+      tags:
+        - Spatial
+      parameters:
+        - name: service
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [WMS]
+        - name: request
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - GetCapabilities
+              - GetMap
+              - GetFeatureInfo
+              - DescribeLayer
+              - GetStyles
+        - name: version
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "1.1.1"
+        - name: format
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - image/jpeg
+              - image/png
+              - image/gif
+              - image/svg+xml
+      responses:
+        '200':
+          description: OGC response.
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            application/xml:
+              schema:
+                type: string
+components:
+  securitySchemes: {}
