@@ -1,0 +1,199 @@
+{
+  "item": [
+    {
+      "id": "158ab3d2-2007-4e67-b89a-07cec0923772",
+      "name": "Query",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "30acc866-399b-49a9-8146-268a01f17f9e",
+          "name": "Run a Soil Data Access query",
+          "request": {
+            "name": "Run a Soil Data Access query",
+            "description": {
+              "content": "Submit a SQL query against the Soil Data Mart database and receive results in the requested format. The request is form-encoded with a SQL query and a desired output format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Tabular",
+                "post.rest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) SQL query to execute against the SDA database."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "Output format for the response."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f77eb942-4264-47c1-8755-1e61585d1d83",
+              "name": "Query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "post.rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) SQL query to execute against the SDA database.",
+                        "type": "text/plain"
+                      },
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Output format for the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c7d7f18a-c166-47fb-9b88-731ff3dd93e2",
+              "name": "Invalid request or SQL error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "post.rest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) SQL query to execute against the SDA database.",
+                        "type": "text/plain"
+                      },
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Output format for the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://SDMDataAccess.sc.egov.usda.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dec33ac5-08b3-4538-831c-b4dc0975cffb",
+    "name": "USDA NRCS Soil Data Access Query API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

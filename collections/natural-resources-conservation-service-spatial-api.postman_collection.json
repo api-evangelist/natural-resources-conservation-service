@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "e58d9dfa-abe2-4771-9d50-961d56f2d19a",
+      "name": "Spatial",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d9b3785-3a30-472f-9fab-7de68a5da7cd",
+          "name": "WFS endpoint (WGS84)",
+          "request": {
+            "name": "WFS endpoint (WGS84)",
+            "description": {
+              "content": "OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84 (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and GetFeature operations via standard OGC query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Spatial",
+                "SDMWGS84Geographic.wfs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "request",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "1.1.0"
+                },
+                {
+                  "disabled": false,
+                  "key": "typeName",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4814610f-4cfe-434f-96e1-50dbf858bfd4",
+              "name": "OGC response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Spatial",
+                    "SDMWGS84Geographic.wfs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "request",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "1.1.0"
+                    },
+                    {
+                      "key": "typeName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8941289-11eb-4840-9545-5be4d03c40ed",
+          "name": "WMS endpoint",
+          "request": {
+            "name": "WMS endpoint",
+            "description": {
+              "content": "OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and GetStyles operations via standard OGC query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Spatial",
+                "SDM.wms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "service",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "request",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "1.1.1"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbf93c6f-da8b-418c-a820-197ad886b0d5",
+              "name": "OGC response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Spatial",
+                    "SDM.wms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "service",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "request",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "1.1.1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://SDMDataAccess.sc.egov.usda.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aa309f82-9880-42d1-b61e-c3930b31abc3",
+    "name": "USDA NRCS Soil Data Access Query Spatial API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

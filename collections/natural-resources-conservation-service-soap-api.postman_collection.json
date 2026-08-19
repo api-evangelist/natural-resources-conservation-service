@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "6b8829c9-289c-4ba0-823f-605e0df3e963",
+      "name": "SOAP",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1aa89425-a949-4df1-b262-b28cd5c56e34",
+          "name": "SOAP tabular service",
+          "request": {
+            "name": "SOAP tabular service",
+            "description": {
+              "content": "SOAP 1.1/1.2 endpoint exposing the RunQuery operation against the Soil Data Mart database. Requests must use a SOAP envelope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Tabular",
+                "SDMTabularService.asmx"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de30153d-d84a-4541-aba3-2c91d877fa77",
+              "name": "SOAP envelope with query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Tabular",
+                    "SDMTabularService.asmx"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://SDMDataAccess.sc.egov.usda.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5a1205b4-f0b2-4d6b-903e-fa9a5ffcd923",
+    "name": "USDA NRCS Soil Data Access Query SOAP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

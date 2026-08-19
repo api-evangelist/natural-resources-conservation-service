@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USDA NRCS Soil Data Access Query Spatial API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Spatial",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "WFS endpoint (WGS84)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDMWGS84Geographic.wfs",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "OGC Web Feature Service 1.1.0 endpoint with soil features in WGS84 (EPSG:4326). Supports GetCapabilities, DescribeFeatureType and GetFeature operations via standard OGC query parameters."
+        },
+        {
+          "info": {
+            "name": "WMS endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Spatial/SDM.wms",
+            "params": [
+              {
+                "name": "service",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "OGC Web Map Service 1.1.1 endpoint for soils map imagery. Supports GetCapabilities, GetMap, GetFeatureInfo, DescribeLayer and GetStyles operations via standard OGC query parameters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

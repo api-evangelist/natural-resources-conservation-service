@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USDA NRCS Soil Data Access Query API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Query",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run a Soil Data Access query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://SDMDataAccess.sc.egov.usda.gov/Tabular/post.rest",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "query",
+                  "value": ""
+                },
+                {
+                  "name": "format",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Submit a SQL query against the Soil Data Mart database and receive results in the requested format. The request is form-encoded with a SQL query and a desired output format."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
