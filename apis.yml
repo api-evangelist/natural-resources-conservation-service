@@ -30,7 +30,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/natural-resources-conservation-service/refs/heads/main/apis.yml
 created: '2024-12-03'
 modified: '2026-05-02'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: natural-resources-conservation-service:soil-data-access-api
   name: NRCS Soil Data Access
