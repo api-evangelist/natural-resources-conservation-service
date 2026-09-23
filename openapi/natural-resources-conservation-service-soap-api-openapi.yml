@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: USDA NRCS Soil Data Access Query SOAP API
+  title: USDA NRCS Soil Data Access SOAP API
   description: OpenAPI description of the USDA Natural Resources Conservation Service Soil Data Access (SDA) web services. SDA exposes a public REST POST endpoint that accepts SQL queries against the Soil Data Mart database and returns tabular data in XML, JSON or plain text. SDA additionally provides SOAP, WFS and WMS endpoints which are referenced here but not fully modeled in this specification. The REST endpoint is open and does not require authentication.
   version: 1.0.0
   contact:
@@ -10,7 +10,7 @@ servers:
 - url: https://SDMDataAccess.sc.egov.usda.gov
   description: USDA NRCS Soil Data Access
 tags:
-- name: SOAP
+- name: Soap
 paths:
   /Tabular/SDMTabularService.asmx:
     post:
@@ -18,7 +18,7 @@ paths:
       description: SOAP 1.1/1.2 endpoint exposing the RunQuery operation against the Soil Data Mart database. Requests must use a SOAP envelope.
       operationId: runQuerySoap
       tags:
-      - SOAP
+      - Soap
       requestBody:
         required: true
         content:

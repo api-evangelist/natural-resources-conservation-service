@@ -1,9 +1,7 @@
 {
   "provider": "natural-resources-conservation-service",
   "sources": [
-    "natural-resources-conservation-service-query-api-openapi.yml",
-    "natural-resources-conservation-service-soap-api-openapi.yml",
-    "natural-resources-conservation-service-spatial-api-openapi.yml"
+    "_original/natural-resources-conservation-service-openapi.yml"
   ],
   "outputs": [
     "natural-resources-conservation-service-query-api-openapi.yml",
@@ -13,6 +11,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "natural-resources-conservation-service-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "natural-resources-conservation-service-openapi.yml: declared missing tag: Query",
+    "natural-resources-conservation-service-openapi.yml: declared missing tag: SOAP",
+    "natural-resources-conservation-service-openapi.yml: declared missing tag: Spatial",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "natural-resources-conservation-service-query-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "natural-resources-conservation-service-soap-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "natural-resources-conservation-service-spatial-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
