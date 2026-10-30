@@ -1,4 +1,4 @@
-# Natural Resources Conservation Service (natural-resources-conservation-service)
+# Natural Resources Conservation Service
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,57 +66,119 @@
 
 The Natural Resources Conservation Service (NRCS) is a federal agency under the United States Department of Agriculture that works to help farmers, ranchers, and landowners conserve and protect natural resources. They provide technical assistance, financial assistance, and conservation planning to help individuals and communities implement conservation practices that improve soil health, water quality, and wildlife habitat.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/natural-resources-conservation-service/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/natural-resources-conservation-service/refs/heads/main/apis.yml)
+**Areas:** Federal Government · Agriculture · Conservation · Soil · Natural Resources
 
-## Scope
+## Natural Resources Conservation Service on APIs.io
 
-- **Type:** Index
+Everything profiled for Natural Resources Conservation Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/natural-resources-conservation-service/](https://apis.io/providers/natural-resources-conservation-service/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Federal Government
-- Agriculture
-- Conservation
-- Soil
-- Natural Resources
+- [NRCS Soil Data Access](https://apis.io/apis/natural-resources-conservation-service/soil-data-access-api/) — Soil Data Access (SDA) is a USDA-NRCS web service that supports ad hoc query and real-time delivery of official soil survey data (SSURGO and STATSGO2) for…
+- [Natural Resources Conservation Service Query API](https://apis.io/apis/natural-resources-conservation-service/natural-resources-conservation-service-query-api/) — The Query API from Natural Resources Conservation Service — 1 operation(s) for query.
+- [Natural Resources Conservation Service SOAP API](https://apis.io/apis/natural-resources-conservation-service/natural-resources-conservation-service-soap-api/) — The SOAP API from Natural Resources Conservation Service — 1 operation(s) for soap.
+- [Natural Resources Conservation Service Spatial API](https://apis.io/apis/natural-resources-conservation-service/natural-resources-conservation-service-spatial-api/) — The Spatial API from Natural Resources Conservation Service — 2 operation(s) for spatial.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-02
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### NRCS Soil Data Access
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Soil Data Access (SDA) is a USDA-NRCS web service that supports ad hoc query and real-time delivery of official soil survey data (SSURGO and STATSGO2) for any user-defined geographic area. The service exposes tabular query and spatial query endpoints that accept SQL-like requests and return JSON or XML responses.
+- [Natural Resources Conservation Service Agentic Access](https://apis.io/agentic-access/natural-resources-conservation-service/natural-resources-conservation-service-agentic-access/)
 
-- **Human URL:** [https://sdmdataaccess.nrcs.usda.gov](https://sdmdataaccess.nrcs.usda.gov)
-- **Base URL:** `https://sdmdataaccess.nrcs.usda.gov`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Soil
-- Data
-- SSURGO
-- STATSGO2
+- [USDA NRCS Soil Data Access](https://apis.io/collections/natural-resources-conservation-service/open-natural-resources-conservation-service/)
+- [USDA NRCS Soil Data Access Query API](https://apis.io/collections/natural-resources-conservation-service/open-natural-resources-conservation-service-query-api/)
+- [USDA NRCS Soil Data Access Query SOAP API](https://apis.io/collections/natural-resources-conservation-service/open-natural-resources-conservation-service-soap-api/)
+- [USDA NRCS Soil Data Access Query Spatial API](https://apis.io/collections/natural-resources-conservation-service/open-natural-resources-conservation-service-spatial-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://sdmdataaccess.nrcs.usda.gov)
-- [Reference](https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx)
-- [Postman Collection](collections/natural-resources-conservation-service.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/natural-resources-conservation-service.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Natural Resources Conservation Service Domain Security](https://apis.io/security/natural-resources-conservation-service/natural-resources-conservation-service-domain-security/)
 
-- [GitHub Organization](https://github.com/USDA-NRCS)
-- [LinkedIn](https://www.linkedin.com/company/natural-resources-conservation-service)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Natural Resources Conservation Service Plans Pricing](https://apis.io/plans/natural-resources-conservation-service/natural-resources-conservation-service-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Natural Resources Conservation Service Rate Limits](https://apis.io/rate-limits/natural-resources-conservation-service/natural-resources-conservation-service-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Natural Resources Conservation Service Finops](https://apis.io/finops/natural-resources-conservation-service/natural-resources-conservation-service-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.nrcs.usda.gov)
 - [Documentation](https://www.nrcs.usda.gov/resources/data-and-reports)
-- [Data](https://sdmdataaccess.nrcs.usda.gov)
+- [GitHub](https://github.com/USDA-NRCS)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 22.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 45.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/natural-resources-conservation-service/](https://apis.io/providers/natural-resources-conservation-service/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Natural Resources Conservation Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/natural-resources-conservation-service/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
